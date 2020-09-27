@@ -3,7 +3,12 @@
 		<input type="text" class="todo-input" placeholder="What needs to be done" v-model="newTodo" @keyup.enter="addTodo">
 
 		<div v-for="todo in todos" :key="todo.id" class="todo-item">
-			{{ todo.title }}
+			<div>
+				{{ todo.title }}
+			</div>
+			<div class="remove-item">
+				&times;
+			</div>
 		</div>
 		
 	</div>	 
@@ -65,6 +70,9 @@ export default {
 	}
 
 	.todo-item{
-
+		margin-bottom: 12px;
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
 	}
 </style>
